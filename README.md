@@ -36,15 +36,19 @@ Downloads |     |
 
 ```bash
 python src/main.py test \
-    --base="resnet50" \  # or "vgg19"
-    --loss="hardest" \   # or "triplet" for random negatives
-    --chunks=8 \         # number of chunks to use for gradient checkpoints
-    --bs=256 \           # batch size
+    --base="resnet50" \
+    --loss="hardest" \
+    --chunks=8 \
+    --bs=256 \
     --filetype=".tif" \
     --device="cuda:0" \
-    --weights_path=pretrain_resnet_bs256.pth \  # path to model weights
-    --test_path=/path/to/binder/test/
+    --weights_path pretrain_resnet_bs256.pth \
+    --test_path /path/to/binder/test/
 ```
+
+Use `--base="vgg19"` to test VGG19-based models, and use `--loss="triplet"` for
+random negative sampling.
+
 
 ## Using Manipulator
 
