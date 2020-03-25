@@ -26,17 +26,6 @@ class RetrievalModule(pl.LightningModule):
         logs = {"loss": loss}
         return {"loss": loss, "log": logs}
 
-    def validation_step(self, batch, batch_idx):
-        anchor, same = batch
-        anchor_emb, same_emb = self.forward(anchor, same)
-        loss = hardest_loss(anchor_emb, same_emb)
-        return {"val_loss": loss}
-
-    def validation_epoch_end(self, outputs):
-        avg_loss = torch.stack([x["val_loss"] for x in outputs]).mean()
-        logs = {"val_loss": avg_loss}
-        return {"avg_val_loss": avg_loss, "log": logs}
-
     def configure_optimizers(self):
         return torch.optim.Adam(
             [
@@ -49,6 +38,17 @@ class RetrievalModule(pl.LightningModule):
             ],
             lr=self.hparams.learning_rate,
         )
+
+    def validation_step(self, batch, batch_idx):
+        anchor, same = batch
+        anchor_emb, same_emb = self.forward(anchor, same)
+        loss = hardest_loss(anchor_emb, same_emb)
+        return {"val_loss": loss}
+
+    def validation_epoch_end(self, outputs):
+        avg_loss = torch.stack([x["val_loss"] for x in outputs]).mean()
+        logs = {"val_loss": avg_loss}
+        return {"avg_val_loss": avg_loss, "log": logs}
 
     def train_dataloader(self):
         train_set = OnlineSyntheticDataset(
