@@ -79,8 +79,7 @@ def main(args):
     else:
         module = RetrievalModule(args)
     trainer = pl.Trainer(max_epochs=args.epochs, gpus=args.gpus)
-    with torch.autograd.set_detect_anomaly(True):
-        trainer.fit(module)
+    trainer.fit(module)
 
 
 if __name__ == "__main__":
