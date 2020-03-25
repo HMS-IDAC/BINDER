@@ -75,6 +75,7 @@ class RetrievalModule(pl.LightningModule):
 def main(args):
     if args.resume:
         module = RetrievalModule.load_from_checkpoint(args.resume)
+        module.hparams = args
     else:
         module = RetrievalModule(args)
     trainer = pl.Trainer(max_epochs=args.epochs, gpus=args.gpus)
