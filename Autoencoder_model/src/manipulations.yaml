@@ -1,0 +1,31 @@
+# Example manipulation configuration file
+
+# probablility of flips
+p_horizontal_flip: 0.5
+p_vertical_flip: 0.5
+
+p_invert: 0.1 # probability of invert colors
+ 
+perspective_range: [-20, 20] # pixels range to perturb each corner of image
+ 
+affine:
+  scale_range: [0.75, 1.25]      # range to scale in percent
+  rotation_range: [-20, 20]    # rotation range in degrees
+  translation_range: [-10, 10] # pixel range to translate image in x and y direction
+
+gamma_range: [0.5, 1.5]      # range of gamma correction (any non-negative number)
+brightness_range: [0.9, 1.1] # range of brightness adjustment (any non-negative number)
+# hue_range: [-0.5, 0.5]       # range of hue (must be in [-0.5, 0.5])
+contrast_range: [0.5, 1.5]   # range of contrast (any non-negative number)
+
+# global_hist_p: 0.0
+# local_hist_p: 0.0
+
+p_jpeg_p: 0.10
+
+# 
+p_blur: 0.05      # probability of gaussian blur
+# 
+# p_noise: 0.10     # probability of gaussian noise
+
+grayscale: 1 # number of channels to output for grascale, remove for color
