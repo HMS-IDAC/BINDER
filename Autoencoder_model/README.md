@@ -4,9 +4,9 @@ Downloads |     |
 ---       | --- |
 [weights](https://www.dropbox.com/s/cxtytmpsc749rkt/weights.zip?dl=0)| Folder with weights 
 Contents of folder
-..* Autoencoder_base_pretrained_COCO.hdf5| Autoencoder base network pretrained on COCO
-..* Autoencoder_top_pretrained_COCO.hdf5| Autoencoder model top fully-connected layers pretrained on COCO 
-..* Autoencoder_top_finetuned_BIO.hdf5| Autoencoder model top fully-connected layers finetuned on BINDER 
+ Autoencoder_base_pretrained_COCO.hdf5| Autoencoder base network pretrained on COCO
+ Autoencoder_top_pretrained_COCO.hdf5| Autoencoder model top fully-connected layers pretrained on COCO 
+ Autoencoder_top_finetuned_BIO.hdf5| Autoencoder model top fully-connected layers finetuned on BINDER 
 
 ### Test Pre-trained Models
 
