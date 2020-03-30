@@ -3,7 +3,7 @@ from torch.utils.data import DataLoader
 import argparse
 from sklearn import metrics
 
-from module import RetrievalModule
+from main import RetrievalModule
 from dataset import TestDataset
 import utils
 
