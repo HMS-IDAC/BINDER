@@ -1,8 +1,14 @@
 
 ## Test Pre-trained Models
 
+Download models:
 ```bash
-python test.py path/to/binder/test path/to/checkpoint
+./scripts/download_weights.sh
+```
+
+Test model:
+```bash
+python test.py path/to/binder/test models/model.ckpt
 ```
 
 Additionally you can use the `--save_closest_diff`, `--save_farthest_dup`, and
