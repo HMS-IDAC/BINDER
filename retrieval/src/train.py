@@ -85,11 +85,11 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", type=int, default=256)
-    parser.add_argument("--learning_rate", type=float, default=1e-1)
+    parser.add_argument("--learning_rate", type=float, default=3e-2)
     parser.add_argument("--base", default="resnet50")
     parser.add_argument("--chunks", type=int, default=8)
     parser.add_argument("--epochs", type=int, default=100)
-    parser.add_argument("--manipulations", default="manipulations.yml")
+    parser.add_argument("--manipulations", default="with_noise.yml")
     parser.add_argument("--synth_valid", action="store_true", default=False)
     parser.add_argument("--filetype", default=".tif")
     parser.add_argument("--gpus", default="0")
