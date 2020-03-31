@@ -24,11 +24,3 @@ future work. The dataset is available at idac.hms.harvard.edu/binder, and
 the source code for models and manipulations will be available upon
 publication.*
 
-
-Downloads |     |
----       | --- |
-[finetune_resnet_bs256.pth](https://www.dropbox.com/s/56s9p5felbjptj5/finetune_resnet_bs256.pth?dl=0)| Fine-tuned ResNet50 weights
-[finetune_vgg_bs256.pth](https://www.dropbox.com/s/iv22fdxxt8damha/finetune_vgg_bs256.pth?dl=0)| Fine-tuned VGG19 weights
-[pretrain_resnet_bs256.pth](https://www.dropbox.com/s/5jgv8ixefvp1gtw/pretrain_resnet_bs256.pth?dl=0)| Pre-trained ResNet50 weights
-[pretrain_vgg_bs256.pth](https://www.dropbox.com/s/fs1co4b60tn5cqw/pretrain_vgg_bs256.pth?dl=0)| Pre-trained VGG19 weights
-
