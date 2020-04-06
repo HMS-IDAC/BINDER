@@ -46,15 +46,22 @@ def img_convert(im):
         raise TypeError('Length of Image size cannot be {}'.format(len(im.shape)))
         
       
-# MAnipulator for train set -real time synthetic manipulations generator
+# MAnipulator for train set -real time synthetic manipulations generator 
 """ Applies Synthetic manipulations, Generates same & same-source manipulated image pairs"""
-X = Manipulator('/home/sc648/Documents/keras/Autoencodermodel_Keras/src/manipulations.yaml')
+X = Manipulator('./src/manipulations.yaml')
 
 ## Sequence genertor (use multiprocessing=True and multiple threads for faster GPU computation)
 class DataGenerator(tensorflow.keras.utils.Sequence):
     """Generates positive and negative pairs if prob_neg_pos > 0, else geneartes only positve pairs
        Input - path to directory with images
        Ouput - Batch of Image pairs and labels: 1 = 'same'(postive pair) | 0 = 'different' (negative_pair)
+       'Initialization'
+           dir_path: path to directory
+           batch_size: batch size
+           input_size: image size
+           n_channels: number of channels (1 or 3)
+           prob_neg_pos:probability of negative samples [0,1]
+           dataset: train/valid if directory contains subfolders choose valid else choose train
     """
     def __init__(self, dir_path, batch_size=1, input_size=128, n_channels=1, prob_neg_pos=0.5, dataset='train',
                  shuffle=True,seed_img=None):
