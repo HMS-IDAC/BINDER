@@ -5,7 +5,7 @@ p_horizontal_flip: 0.5
 p_vertical_flip: 0.5
 
 p_invert: 0.1 # probability of invert colors
- 
+
 perspective_range: [-20, 20] # pixels range to perturb each corner of image
  
 affine:
@@ -26,4 +26,4 @@ p_jpeg: 0.10
 # p_blur: 0.05      # probability of gaussian blur
 # p_noise: 0.05     # probability of gaussian noise
 
-grayscale: 1 # number of channels to output for grascale, remove for color
+#grayscale: 1 # number of channels to output for grascale, remove for color
