@@ -7,7 +7,7 @@ from torch.nn.parameter import Parameter
 from torchvision import models
 
 
-class BioMetric(nn.Module):
+class Retrieval(nn.Module):
     def __init__(
         self, base="resnet50", out_dim=2048, pretrained=True, gemp=3, chunks=0
     ):
@@ -20,7 +20,7 @@ class BioMetric(nn.Module):
             chunks (int): number of chuncks for gradient checkpointing,
                 0 to disable.
         """
-        super(BioMetric, self).__init__()
+        super(Retrieval, self).__init__()
 
         assert base in ["resnet50", "vgg19"]
 
@@ -54,7 +54,7 @@ class BioMetric(nn.Module):
 
         x = self.gem(x)
 
-        x.squeeze_()
+        x = x.squeeze()
         x = self.fc(x)
 
         # L2 norm
