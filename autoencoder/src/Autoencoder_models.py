@@ -138,19 +138,19 @@ def Embedding(input_size=(128,128,1),pretrained_weights=False,weights_path=None)
 
 # include metric learning by freezing model weights, and taking output of encoder = 16 x 16 x32  and pass throughh pooling (average pool and max pool) and dense layers
 def Autoencoder_top(input_size=(128,128,1), pretrained_weights = False, weights_path = None,
-                    batch_size = 64, base_weights = None, lr = 1e-4):
+                    batch_size = 64, pretrained_weights_base = False, base_weights = None, lr = 1e-4):
     """ 
          left and right branch input (anchor and same/different image)
     """
     Input_l = Input(shape=input_size,name='Input_l') # anchor
     Input_r = Input(shape=input_size,name='Input_r') # twin 
     
-    weights_list = Autoencoder(pretrained_weights=True, weights_path = base_weights).get_weights() # get the weights of autoencoder pretrained on coco for 15 epochs (bs = 64)
+    weights_list = Autoencoder(pretrained_weights=pretrained_weights_base, weights_path = base_weights).get_weights() # get the weights of autoencoder pretrained on coco for 15 epochs (bs = 64)
     
     # load the pretrained weights into the encoder model that outputs the embedding    
     model_embedding = Embedding()
     model_embedding.set_weights(weights_list[0:18])
-    embedding_out=model_embedding([Input_l,Input_r])
+    embedding_out = model_embedding([Input_l,Input_r])
     output_embedding_l= embedding_out[0] # left
     output_embedding_r= embedding_out[1] # right
     
