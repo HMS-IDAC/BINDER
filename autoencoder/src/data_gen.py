@@ -296,7 +296,7 @@ def test_generator_hardneg(dir_path,batch_size=2,img_size=128,n_channels=3,seed_
                 print("Directory {} is not empty".format(dir_path))
         else:
             print("Given Directory {} doesn.t exists".format(dir_path)) 
-        batch_size=len(os.listdir(dir_path))
+        
         Image_filenames = os.listdir(dir_path) # list of file names of images in directory
         img_anchor = np.empty((batch_size,img_size,img_size,n_channels)) # to store anchor for left branch of siamese net
         img_twin = np.empty((batch_size,img_size,img_size,n_channels)) # to store twin for right branch of siamese net.
@@ -336,7 +336,7 @@ def test_imageconvert_generator_hardneg(dir_path,batch_size=2,img_size=128,n_cha
                 print("Directory {} is not empty".format(dir_path))
         else:
             print("Given Directory {} doesn.t exists".format(dir_path)) 
-        batch_size=len(os.listdir(dir_path))
+       
         Image_filenames = os.listdir(dir_path) # list of file names of images in directory
         img_anchor = np.empty((batch_size,img_size,img_size,n_channels)) # to store anchor for left branch of siamese net
         img_twin = np.empty((batch_size,img_size,img_size,n_channels)) # to store twin for right branch of siamese net.
