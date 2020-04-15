@@ -1,8 +1,7 @@
 # BINDER
 
 ![train](figures/train.png)
-
-**On Identification and Retrieval of Near-Duplicate Biological Images: a New Dataset and Baseline**<br>
+**On Identification and Retrieval of Near-Duplicate Biological Images: a new Dataset and Protocol**<br>
 T.E. Koker, S.S. Chintapalli, S. Wang, B.A. Talbot, D. Wainstock, M. Cicconet, and M. Walsh
 
 Paper: To appear<br>
