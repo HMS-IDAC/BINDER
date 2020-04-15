@@ -59,7 +59,7 @@ if pretrained model weights are defined in --in_weights_path, loads pretrained m
 if arguments.model == 'Autoencoder':   
     """load Autoencoder model to pretrain on COCO; else load pretrained Autoencoder; this is the bottom(base) network"""
     if arguments.input_weights_path: 
-        Model = Autoencoder(pretrained_weights = True,weights_path = in_weights_path)
+        Model = Autoencoder(pretrained_weights = True, weights_path = in_weights_path)
     else:
         Model = Autoencoder()
     prob_neg_pos = 0.5 # probability of negative and positive pair generation
@@ -68,9 +68,9 @@ if arguments.model == 'Autoencoder':
 elif arguments.model == 'Autoencoder_top': 
     """load Autoencoder_top model to  fine-tune on BINDER; else load pretrained Autoencoder_top"""
     if arguments.input_weights_path: # load pretrained model
-        Model = Autoencoder_top(pretrained_weights = True, weights_path = in_weights_path, batch_size = batch_size, base_weights = base_weights)
+        Model = Autoencoder_top(pretrained_weights = True, weights_path = in_weights_path, batch_size = batch_size)
     else:
-        Model = Autoencoder_top(batch_size = batch_size, base_weights = base_weights)
+        Model = Autoencoder_top(batch_size = batch_size, pretrained_weights_base = True, base_weights = base_weights)
     prob_neg_pos = 0 # probability of negative pair generation = 0 ; using triplet loss with hardest neg selection from within batch
 
 
