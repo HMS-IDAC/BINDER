@@ -37,11 +37,10 @@ n_channels = arguments.n_channels
 test_dataset_name = arguments.test_dataset_name
 n_random_sel = arguments.n_random_sel
 
-base_weights = './weights/Autoencoder_base_pretrained_COCO.hdf5' # Autoencoder pretrained on COCO to load into base encoder network
    
-model_test= Autoencoder_top(pretrained_weights=True, weights_path=weights_model, base_weights=base_weights)
+model_test= Autoencoder_top(pretrained_weights=True, weights_path=weights_model)
 
-## Random selection
+"""Random selection"""
 test_generator=test_gen(dir_path=test_path, test_dataset_name=test_dataset_name,neg_selection='random',batch_size=batch_size,n_channels=1)
 data_gen=test_generator.select_generator()
 
@@ -109,8 +108,9 @@ print('AP Average Precision:'+str(avg_pres_random) +'\n')
 
 pred_labels=[]
 true_labels=[]
-## Hard Negative selection
-test_generator_hardsel = test_gen(dir_path=test_path, test_dataset_name=test_dataset_name,neg_selection='hardneg',batch_size=batch_size,n_channels=1)
+
+"""Hard Negative selection"""
+test_generator_hardsel = test_gen(dir_path=test_path, test_dataset_name=test_dataset_name,neg_selection='hardneg',batch_size=len(os.listdir(test_path)),n_channels=1)
 data_gen_hardneg = test_generator_hardsel.select_generator()
 X_hardneg = next(data_gen_hardneg)
 predict_hardneg = model_test.predict_on_batch(X_hardneg[0])
