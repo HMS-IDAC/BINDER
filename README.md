@@ -4,7 +4,7 @@
 **On Identification and Retrieval of Near-Duplicate Biological Images: a New Dataset and Protocol**<br>
 T.E. Koker, S.S. Chintapalli, S. Wang, B.A. Talbot, D. Wainstock, M. Cicconet, and M. Walsh
 
-Paper: To appear<br>
+Paper: [https://ailb-web.ing.unimore.it/icpr/author/3515](https://ailb-web.ing.unimore.it/icpr/author/3515)<br>
 Dataset: [https://idac.hms.harvard.edu/binder](https://idac.hms.harvard.edu/binder)<br>
 Code: [https://github.com/hms-idac/BINDER](https://github.com/hms-idac/BINDER)<br>
 
