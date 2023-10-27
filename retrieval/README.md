@@ -1,10 +1,7 @@
 
 ## Test Pre-trained Models
 
-Download models:
-```bash
-./scripts/download_weights.sh
-```
+~~Download models: `./scripts/download_weights.sh`~~. Download from [Google Drive](https://drive.google.com/file/d/12jWquL2TU9J7VAo3J1vORMTf5r4PKcgv/view?usp=sharing).
 
 Test model:
 ```bash
